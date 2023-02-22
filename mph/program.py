@@ -1,6 +1,7 @@
 from subprocess import run, PIPE
 from io import StringIO
 
+
 class Program(object):
     """
     Represents a userspace program
@@ -35,7 +36,7 @@ class Program(object):
     @property
     def args(self):
         return self._args
-    
+
     def append_stdin(self, data):
         """
         Appends `data` to the program's standard input
@@ -78,8 +79,7 @@ class Program(object):
         Start execution of the program
         """
         self._prog = run([self.path] + self.args, stdout=PIPE, stderr=PIPE,
-                input=self._stdin)
+                         input=self._stdin)
         self._stdout = self._prog.stdout
         self._stderr = self._prog.stderr
         self._retval = self._prog.returncode
-

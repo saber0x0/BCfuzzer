@@ -2,10 +2,12 @@ import sys
 from random import randint
 from .fuzzer import Fuzzer
 
+
 class BinaryFuzzer(Fuzzer):
     """
     Fuzzer that produces unstructured binary output
     """
+
     def __init__(self, min_length, max_length=None):
         super().__init__()
         self._min_length = min_length
@@ -36,4 +38,3 @@ class BinaryFuzzer(Fuzzer):
         self._cases.append(bytes(data))
 
         return bytes(data)
-

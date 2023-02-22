@@ -2,10 +2,12 @@ import sys
 from random import randint, sample
 from .fuzzer import Fuzzer
 
+
 class AlphaNumericFuzzer(Fuzzer):
     """
     A fuzzer that produces unstructured alphanumeric output
     """
+
     def __init__(self, min_length, max_length):
         super().__init__()
         self._min_length = min_length
@@ -38,4 +40,3 @@ class AlphaNumericFuzzer(Fuzzer):
         self._cases.append("".join(data))
 
         return "".join(data)
-

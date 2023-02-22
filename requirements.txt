@@ -1,0 +1,5 @@
+capstone
+mph
+fuzzbang
+pyelftools
+kitty

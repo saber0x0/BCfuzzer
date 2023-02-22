@@ -2,8 +2,10 @@ import sys
 
 from mph.program import Program
 from fuzzbang.alphanumericfuzzer import AlphaNumericFuzzer
+import binop
 
-PATH_TO_NAME = "/Users/huahua/PycharmProjects/lpy/fuzzer/fuzzer/name"  # fill this in yourself
+PATH_TO_NAME = "/Users/huahua/PycharmProjects/lpy/fuzzer/BCfuzzer/name"   # fill this in yourself
+
 
 def run(string):
     """
@@ -35,16 +37,16 @@ if __name__ == "__main__":
     # command-line arguments
     num_cases = int(sys.argv[1])  # number of test cases to run
     max_length = int(sys.argv[2])  # maximum length of each string
-
+    # path_name = str(sys.argv[3])
     results = []  # list for storing the result of each test
 
     # main loop
     for i in range(num_cases):
-        input = generate_input(max_length)  # generate input string
-        return_value = run(input)  # run name with our input
+        usr_input = generate_input(max_length)  # generate input string
+        return_value = run(usr_input)  # run name with our input
 
         # save test results to our global results list
-        test_result = {"num": i, "input": input, "output": return_value}
+        test_result = {"num": i, "input": usr_input, "output": return_value}
         results.append(test_result)
 
     # print summary
@@ -52,4 +54,4 @@ if __name__ == "__main__":
         print("Case #{:d}:".format(test["num"]))
         print("	IN: " + test["input"])
         print("	OUT: {:4d}".format(test["output"]))
-        print("\n")
+        # print("\n")
