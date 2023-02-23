@@ -7,10 +7,10 @@ from capstone import *
 from elftools import *
 
 
-def main():
+def main(arg):
 
     # 要解析的动态库路径
-    elf_path = r'../pwn'
+    elf_path = arg
     # 打开 elf 文件
     file = open(elf_path, 'rb')
     # 创建 ELFFile 对象 , 该对象是核心对象
